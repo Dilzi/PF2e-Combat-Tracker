@@ -1,0 +1,51 @@
+<div class="card" style="width: 18rem;" *ngIf="combatant">
+  <div class="card-body">
+    
+    
+    <div *ngIf="editMode; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <h5> 
+          <input [(ngModel)]="editName" style="width:75%" (keyup.enter)="clickEdit('save')">
+          
+          <i class="bi bi-check-square" (click)="clickEdit('save')"></i>
+          <i class="bi bi-x-square" (click)="clickEdit('cancel')"></i>
+        </h5>
+      </ng-template>
+
+    <ng-template #elseBlock>
+      <h5 class="card-title">{{ combatant.name }} 
+        <i class="bi bi-pencil-square" (click)="clickEdit('edit')"></i>
+      </h5>
+    </ng-template>
+
+
+
+    
+    <h6 class="card-subtitle mb-2 text-muted">
+      Initiative: {{ combatant.initiative }}
+    </h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Identifier: {{ combatant.id }}
+    </h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      HP: {{ combatant.stats.hp }} / {{ combatant.stats.hpmax }} (Temp: {{ combatant.stats.hptemp}})
+    <button (click)="combatant.modifyHealth(1)">DMG 1</button>
+    <button (click)="combatant.modifyHealth(5)">DMG 5</button>
+    <button (click)="combatant.modifyHealth(-1)">HEAL 1</button>
+    <button (click)="combatant.modifyHealth(-5)">HEAL 5</button>
+
+
+    </h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Saves: {{ combatant.stats.reflex }} / {{ combatant.stats.fortitude }} / {{ combatant.stats.will }}
+    </h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Identifier: {{ combatant.id }}
+    </h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Identifier: {{ combatant.id }}
+    </h6>
+    
+    <p class="card-text" *ngIf="combatant.description">{{ combatant.description }}</p>
+  </div>
+</div>

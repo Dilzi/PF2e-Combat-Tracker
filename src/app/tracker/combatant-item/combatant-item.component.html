@@ -1,0 +1,9 @@
+<td>{{ combatant.name }} <br>
+  <span class="badge bg-primary">AC: {{ combatant.stats.ac }}</span>
+  <span class="badge bg-primary">REF: {{ combatant.stats.reflex }}</span>
+  <span class="badge bg-primary">FORT: {{ combatant.stats.fortitude }}</span>
+  <span class="badge bg-primary">WILL: {{ combatant.stats.will }}</span>
+</td>
+
+<td>{{ combatant.stats.hp }} <div *ngIf="combatant.stats.hptemp != 0">+{{ combatant.stats.hptemp }}</div></td>
+<td>{{ combatant.initiative }}</td>
