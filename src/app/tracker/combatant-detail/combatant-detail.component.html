@@ -28,7 +28,7 @@
       Identifier: {{ combatant.id }}
     </h6>
     <h6 class="card-subtitle mb-2 text-muted">
-      HP: {{ combatant.stats.hp }} / {{ combatant.stats.hpmax }} (Temp: {{ combatant.stats.hptemp}})
+      HP: {{ combatant.stats.hp }} / {{ combatant.stats.hpmax }} (Temp: {{ combatant.stats.hptemp}})<br>
     <button (click)="combatant.modifyHealth(1)">DMG 1</button>
     <button (click)="combatant.modifyHealth(5)">DMG 5</button>
     <button (click)="combatant.modifyHealth(-1)">HEAL 1</button>

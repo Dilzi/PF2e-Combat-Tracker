@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Combatant, Stats } from './combatant';
+import { Combatant} from './combatant';
 import { COMBLIST } from './combatant-list';
-import { iconsoldier } from './icons'
+
 
 @Component({
   selector: 'app-tracker',
@@ -15,9 +15,7 @@ export class TrackerComponent implements OnInit {
 
   //Currently selected combatant. May be replaced by popups
   selectedCombatant?: Combatant;
-
-  tesss: string = iconsoldier;
-  
+ 
   
   //------------------------------------------
   constructor() { }

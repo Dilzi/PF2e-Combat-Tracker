@@ -2,7 +2,15 @@
 <h4>Version: {{ version }} ({{name}})</h4>
 <hr />
 <app-tracker>app-tracker here</app-tracker>
-<br>
+<div *ngIf="swap else loading">
+
+</div>
+
+<ng-template #loading>
+<app-encounter>app-encounter here</app-encounter>
+</ng-template>
+
+
 <br>
 <hr>
 <p>To do:<br>

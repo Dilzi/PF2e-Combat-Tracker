@@ -15,40 +15,19 @@ export interface Stats {
   will: number;
 }
 
-export interface Condition {}
-
 export class Combatant {
   id: number;
   name: string = 'New combatant';
-  stats: Stats; //(HP, AC, RFLX, FORT, WILL)
-  conditions: Condition[];
+  stats: Stats = { hp: 0, hpmax: 0, hptemp: 0, ac: 0, reflex: 0, fortitude:0, will: 0};
   initiative: number = 0;
   description: string = '';
 
   /*
    * Initialises all stats to 0 and randomises an id.
-   * A stat at 0 will not display.
-   * Allows filling in name and initiative for quick characters.
    */
   constructor(name?: string, init?: number) {
     this.id = Math.floor(Math.random() * 1000);
-    let newstats: Stats = {
-      hp: 10,
-      hpmax: 10,
-      hptemp: 0,
-      ac: 0,
-      reflex: 0,
-      fortitude: 0,
-      will: 0,
-    };
-    this.stats = newstats;
-    if (name) {
-      this.name = name;
-    }
-    if (init) {
-      this.initiative = init;
-    }
-
+    
     this.randomise();
   }
 
