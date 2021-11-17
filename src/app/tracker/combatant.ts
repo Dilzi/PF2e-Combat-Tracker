@@ -13,6 +13,7 @@ export interface Stats {
   reflex: number;
   fortitude: number;
   will: number;
+  //test
 }
 
 export class Combatant {
