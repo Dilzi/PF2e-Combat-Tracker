@@ -1,13 +1,13 @@
 <h1>{{ title }}</h1>
 <h4>Version: {{ version }} ({{name}})</h4>
 <hr />
-<app-tracker>app-tracker here</app-tracker>
-<div *ngIf="swap else loading">
 
+<div *ngIf="swap else loading">
+  <app-tracker>app-tracker here</app-tracker>
 </div>
 
 <ng-template #loading>
-<app-encounter>app-encounter here</app-encounter>
+  <app-encounter>app-encounter here</app-encounter>
 </ng-template>
 
 

@@ -8,14 +8,14 @@ import { Creature } from './creature';
  */
 export class Combatant{
   id: number; //Unique identifier, allows multiple instances of creatures.
-  name: string; //Name for this specific combatant, seperate from it's creature name.
+  name?: string; //Name for this specific combatant, seperate from it's creature name.
   
   creature: Creature; //Base stats for creature. Read only.
   
   initiative: number = 0; //Position in encounter. Can change, either by DELAY or going unconcious.
   
   hp: number; //Current HP statistic.
-  hptemp: number; //Any temp HP that is accumulated.
+  hptemp: number = 0; //Any temp HP that is accumulated.
   
   //conditions: Condition[]; //List of conditions affecting the combatant.
 

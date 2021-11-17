@@ -64,8 +64,9 @@ export class Combatant {
     this.stats.hpmax = this.RandomNum(5, 15);
     this.stats.hp = this.stats.hpmax;
     this.stats.ac = this.RandomNum(15, 22);
-    this.stats.hptemp = this.RandomNum(0, 5);
-
+    if (this.RandomNum(1,4) == 1) { //25% chance a creature iwll have temp HP  
+      this.stats.hptemp = this.RandomNum(0, 5);
+    }
     this.stats.reflex = this.RandomNum(2, 8);
     this.stats.fortitude = this.RandomNum(2, 8);
     this.stats.will = this.RandomNum(2, 8);

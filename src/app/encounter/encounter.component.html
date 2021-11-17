@@ -1,3 +1,6 @@
 <p>
-encounter works!
+Help!
 </p>
+<li *ngFor="let combatant of currentEncounter.combatants">
+  {{ combatant.name }} with {{ combatant.hp}} HP and an AC of {{combatant.creature.ac}}
+</li>

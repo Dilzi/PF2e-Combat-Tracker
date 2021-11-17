@@ -11,6 +11,7 @@ export class Creature {
   name: string = 'New combatant';
   description: string = '';
 
+  level: number = 0;
   hpmax: number;
   ac: number;
 
@@ -39,6 +40,7 @@ export class Creature {
   randomise() {
     let name1: string;
     let name2: string;
+    this.level = this.RandomNum(0,3);
     this.hpmax = this.RandomNum(5,15);
     this.ac = this.RandomNum(15,22);
 

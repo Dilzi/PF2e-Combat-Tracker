@@ -4,8 +4,8 @@
     <tr>
       <th>
       <th>Name</th>
-      <th>HP</th>
-      <th>Initiative</th>
+      <th style="text-align: center">HP</th>
+      <th style="text-align: center">Initiative</th>
 
     </tr>
   </thead>
@@ -28,9 +28,11 @@
           <span class="badge bg-primary">WILL: {{ combatant.stats.will }}</span>
       </td>
 
-      <td>{{ combatant.stats.hp }} <div *ngIf="combatant.stats.hptemp != 0">+{{ combatant.stats.hptemp }}</div></td>
+      <td> <div class="tracker-hp">{{ combatant.stats.hp }}</div> 
+        <div *ngIf="combatant.stats.hptemp != 0" class="tracker-hptemp">+{{ combatant.stats.hptemp }}</div>
+      </td>
 
-      <td>{{ combatant.initiative }}</td>
+      <td class="tracker-initiative">{{ combatant.initiative }}</td>
     </tr>
     <tr>
       <td></td>

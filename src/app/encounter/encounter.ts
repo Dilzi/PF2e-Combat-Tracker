@@ -5,31 +5,39 @@ Any template-specific feature of a creature (max hp, saves, AC, name, etc) will 
 
 */
 import { Combatant } from './combatant';
+import { Creature } from './creature';
 
+export class Encounter {
+  combatants: Combatant[] = [];
+  currentTurn: number = 0;
+  currentRound: number = 0;
 
+  stateRunning: boolean = false;
 
-export class Encounter{
-  
-  
-  combatants: Combatant[];
-  currentTurn: number;
-  currentRound: number;
+  timeReal: number = 0; //How many real seconds elapsed since combat start
+  timeGame: number = 0; //How many game seconds elapsed since combat start (1 round = 6 real secs)
 
-  stateRunning: boolean;
-
-  timeReal: number; //How many real seconds elapsed since combat start
-  timeGame: number; //How many game seconds elapsed since combat start (1 round = 6 real secs)
-
-  constructor(){
-    this.combatants[0].name
-  }
-
-  sortList(){
+  constructor() {
     
-
   }
 
-/*
+
+  /**
+   * Add a combatant to the encounter.
+   * If one is not supplied, one is randomly generated.
+   */
+  addCombatant(newCombatant?: Combatant){
+    if (newCombatant) {
+      this.combatants.push(newCombatant);
+    } else {
+      var tempCombatant: Combatant;
+      tempCombatant = new Combatant(new Creature());    
+      tempCombatant.name = tempCombatant.creature.name;
+      this.combatants.push(tempCombatant);
+    }
+  }
+  
+  /*
   modifyHealth(id: number, amount: number) {
     if (amount > 0){ //Damage
       if (amount > this.stats.hptemp) {
@@ -53,7 +61,7 @@ export class Encounter{
   }
 */
 
-  RandomNum(min: number, max: number): number{
-    return Math.floor(Math.random() * (max - min + 1) + min)
+  RandomNum(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }
